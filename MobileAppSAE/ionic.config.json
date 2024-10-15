@@ -1,0 +1,7 @@
+{
+  "name": "MobileAppSAE",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
