@@ -1,0 +1,20 @@
+// camera.component.scss
+
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Centre verticalement
+    align-items: center; // Centre horizontalement
+    height: 100vh; // Prend la pleine hauteur de la fenêtre
+    overflow: auto; // Permet le défilement si le contenu déborde
+}
+
+ion-button {
+    margin-bottom: 20px; // Ajoute un espacement en bas du bouton
+}
+
+img {
+    max-width: 100%; // Garde l'image responsive
+    height: auto; // Garde la proportion de l'image
+    max-height: 70vh; // Limite la hauteur de l'image pour éviter qu'elle ne dépasse l'écran
+}
