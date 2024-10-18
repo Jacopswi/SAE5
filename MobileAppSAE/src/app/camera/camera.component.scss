@@ -3,18 +3,18 @@
 :host {
     display: flex;
     flex-direction: column;
-    justify-content: center; // Centre verticalement
-    align-items: center; // Centre horizontalement
-    height: 100vh; // Prend la pleine hauteur de la fenêtre
-    overflow: auto; // Permet le défilement si le contenu déborde
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;
 }
 
 ion-button {
-    margin-bottom: 20px; // Ajoute un espacement en bas du bouton
+    margin-bottom: 20px;
 }
 
 img {
-    max-width: 100%; // Garde l'image responsive
-    height: auto; // Garde la proportion de l'image
-    max-height: 70vh; // Limite la hauteur de l'image pour éviter qu'elle ne dépasse l'écran
+    max-width: 100%;
+    height: auto;
+    max-height: 70vh;
 }
