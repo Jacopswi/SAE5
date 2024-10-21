@@ -1,10 +1,10 @@
-<form class="login-form">
+<form class="login-form" (ngSubmit)="onSubmit($event)">
   <h2>Page de connexion</h2>
   <label for="email">Email</label>
-  <input type="text" id="email" name="email" required>
+  <input type="text" id="email" name="email" [(ngModel)]="email" required>
 
   <label for="password">Password</label>
-  <input type="password" id="password" name="password" required>
+  <input type="password" id="password" name="password" [(ngModel)]="password" required>
 
   <button type="submit">Login</button>
 </form>
