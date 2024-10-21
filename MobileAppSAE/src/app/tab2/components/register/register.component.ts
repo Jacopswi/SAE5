@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../../services/auth.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent  implements OnInit {
 
 
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,private navCtrl: NavController) { }
 
   onSubmit(event: Event){
     event.preventDefault();
@@ -32,6 +33,7 @@ export class RegisterComponent  implements OnInit {
       response => {
         console.log('auth réussie', response);
         // redirect vers login
+        this.navCtrl.navigateForward('/tabs/login');
       },
       error => {
         console.error('Erreur lors de la connexion', error);
