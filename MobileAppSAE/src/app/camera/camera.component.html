@@ -5,3 +5,7 @@
   <h2>Photo prise :</h2>
   <img [src]="photo" alt="Photo prise" style="max-width: 100%; height: auto;" />
 </div>
+<div *ngIf="animalType">
+  <h2>Animal reconnu :</h2>
+  <p>{{ animalType }}</p>
+</div>
