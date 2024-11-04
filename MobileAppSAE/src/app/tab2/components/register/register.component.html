@@ -8,24 +8,58 @@
 
 <ion-content [fullscreen]="true">
 
-  <form class="register-form" (ngSubmit)="onSubmit($event)">
-    <h2>Register</h2>
-  
-    <label for="username">Pseudo</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required>
-  
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" [(ngModel)]="email" required>
-  
-    <label for="password">Mot de passe</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required>
-  
-    <label for="password">Confirmer le mot de passe</label>
-    <input type="password" id="passwordVerif" name="passwordVerif" [(ngModel)]="passwordAgain" required>
-  
-    <button type="submit">S'inscrire</button>
-  </form>
-  
+  <div class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 w-full max-w-md m-auto">
+    <div class="flex justify-center mb-8">
+        <h2 class="text-2xl font-bold text-black">Créer un nouveau compte</h2>
+    </div>
+    <form class="register-form" (ngSubmit)="onSubmit($event)">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                Pseudo
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                type="text" id="username" name="username" [(ngModel)]="username" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                Email
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                type="email" id="email" name="email" [(ngModel)]="email" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                Mot de passe
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                type="password" id="password" name="password" [(ngModel)]="password" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="passwordVerif">
+                Confirmer le mot de passe
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                type="password" id="passwordVerif" name="passwordVerif" [(ngModel)]="passwordAgain" required>
+        </div>
+
+        <div class="flex flex-col space-y-4">
+            <button
+                class="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit">
+                S'inscrire
+            </button>
+        </div>
+    </form>
+</div>
+
+
 
 </ion-content>
 
