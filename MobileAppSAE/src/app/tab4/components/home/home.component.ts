@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { MenuController} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,11 @@ import { NavController } from '@ionic/angular';
 })
 export class HomeComponent {
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private menu: MenuController) {}
+
+  toggleMenu() {
+    this.menu.toggle('mobile-menu');
+  }
 
 
 }

@@ -1,12 +1,39 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Register
-    </ion-title>
+  <ion-toolbar class="bg-indigo-900">
+    <div class="flex items-center justify-between w-full">
+      <div class="text-white text-lg font-bold ml-4">
+        IAnimaux
+      </div>
+      <ion-buttons slot="end">
+        <ion-menu-button class="text-white"></ion-menu-button>
+      </ion-buttons>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-menu side="end" menuId="main-menu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title class="text-white font-bold">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/tabs/login">
+        <ion-label>Login</ion-label>
+      </ion-item>
+      <ion-item routerLink="/tabs/register">
+        <ion-label>Register</ion-label>
+      </ion-item>
+      <ion-item routerLink="/tabs/tab3">
+        <ion-label>Photo</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content" [fullscreen]="true">
 
   <div class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 w-full max-w-md m-auto">
     <div class="flex justify-center mb-8">
