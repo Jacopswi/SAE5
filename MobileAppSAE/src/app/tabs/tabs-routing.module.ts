@@ -9,19 +9,19 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../tabLogin/tab1.module').then(m => m.Tab1PageModule)
       },
       {
         path: 'register',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../tabRegister/tab2.module').then(m => m.Tab2PageModule)
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../tabCamera/tab3.module').then(m => m.Tab3PageModule)
       },
       {
         path: 'home',
-        loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
+        loadChildren: () => import('../tabHome/tab4.module').then(m => m.Tab4PageModule)
       },
       {
         path: '',
