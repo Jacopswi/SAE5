@@ -18,12 +18,20 @@ export class LoginComponent  implements OnInit {
   ngOnInit() {
   }
 
+  
+  async logout(){
+    try {
+      await this.authService.logout();
+    } catch (error) {
+      console.error('Erreur de connexion:', error);
+    }
+  }
+
+
   async login() {
-    console.log(this.email)
     try {
       await this.authService.login(this.email, this.password);
-      console.log("login success")
-      this.router.navigate(['/home']);
+      this.router.navigate(['/tabs/home']);
     } catch (error) {
       console.error('Erreur de connexion:', error);
     }

@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class DetectionAnimalIaService {
   private apiUrl = 'http://localhost:5000/detect';
 
-   constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-   detect(image: File) {
+  detect(image: File) {
     const formData = new FormData();
     formData.append('image', image);
     return this.http.post(this.apiUrl, formData);

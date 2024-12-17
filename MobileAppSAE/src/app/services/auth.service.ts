@@ -14,17 +14,23 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   providedIn: 'root'
 })
 export class AuthService {
+  private userState = new BehaviorSubject<boolean>(false);
   user$: Observable<any>;
 
 
 
   constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {
     this.user$ = this.afAuth.authState;
+
+    this.user$.subscribe(user => {
+      this.userState.next(!!user);
+    });
   }
 
   async login(email: string, password: string): Promise<any> {
     try {
       return await this.afAuth.signInWithEmailAndPassword(email, password);
+      
     } catch (error) {
       console.error('Erreur de connexion :', error);
       throw error;
@@ -59,7 +65,8 @@ export class AuthService {
 
   async logout(): Promise<void> {
     try {
-      return await this.afAuth.signOut();
+      await this.afAuth.signOut();
+      console.log('Utilisateur déconnecté avec succès.');
     } catch (error) {
       console.error('Erreur lors de la déconnexion :', error);
       throw error;
@@ -79,6 +86,10 @@ export class AuthService {
   async getUserInfo():Promise<firebase.User | null>{
     const user = await this.afAuth.currentUser;
     return user;
+  }
+
+  public isConnectedInstant(): boolean {
+    return this.userState.value;
   }
 
 }

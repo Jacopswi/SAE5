@@ -5,15 +5,13 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-model = YOLO("yolov5s.pt")  # Chargez le modèle YOLO une seule fois
+model = YOLO("yolov5s.pt") 
 
 @app.route("/detect", methods=["POST"])
 def detect():
-    # Recevez l'image envoyée via une requête POST
     file = request.files["image"]
-    file.save("uploaded_image.jpg")  # Sauvegarder temporairement l'image
+    file.save("uploaded_image.jpg")
     
-    # Exécuter la détection YOLO
     results = model("uploaded_image.jpg")
     
     detections = []
@@ -27,7 +25,6 @@ def detect():
             }
             detections.append(detection)
 
-    # Retourner les résultats au format JSON
     return jsonify(detections)
 
 if __name__ == "__main__":
